@@ -63,136 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var MobileMenu = function () {
-    function MobileMenu() {
-        _classCallCheck(this, MobileMenu);
-
-        this.siteHeader = document.querySelector('.site-header');
-        this.menuIcon = document.querySelector('.site-header__menu-icon');
-        this.menuContent = document.querySelector('.site-header__menu-content');
-        this.events();
-    }
-
-    _createClass(MobileMenu, [{
-        key: 'events',
-        value: function events() {
-            this.menuIcon.addEventListener('click', this.toggleTheMenu.bind(this));
-        }
-    }, {
-        key: 'toggleTheMenu',
-        value: function toggleTheMenu() {
-            this.menuContent.classList.toggle('site-header__menu-content--is-visible');
-            this.siteHeader.classList.toggle('site-header--is-expanded');
-            this.menuIcon.classList.toggle('site-header__menu-icon--close-x');
-        }
-    }]);
-
-    return MobileMenu;
-}();
-
-exports.default = MobileMenu;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _noframework = __webpack_require__(3);
-
-var _noframework2 = _interopRequireDefault(_noframework);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var RevealOnScroll = function () {
-    function RevealOnScroll(els, offset) {
-        _classCallCheck(this, RevealOnScroll);
-
-        this.itemsToReveal = document.querySelectorAll(els);
-        this.offset = offset;
-        this.hideInitially();
-        this.createWaypoints();
-    }
-
-    _createClass(RevealOnScroll, [{
-        key: 'hideInitially',
-        value: function hideInitially() {
-            this.itemsToReveal.forEach(function (el) {
-                el.classList.add('reveal-item');
-            });
-        }
-    }, {
-        key: 'createWaypoints',
-        value: function createWaypoints() {
-            var _this = this;
-
-            this.itemsToReveal.forEach(function (el) {
-                new Waypoint({
-                    element: el,
-                    handler: function handler() {
-                        el.classList.add("reveal-item--is-visible");
-                    },
-                    offset: _this.offset
-                });
-            }, this);
-        }
-    }]);
-
-    return RevealOnScroll;
-}();
-
-exports.default = RevealOnScroll;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _MobileMenu = __webpack_require__(0);
-
-var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
-
-var _RevealOnScroll = __webpack_require__(1);
-
-var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mobileMenu = new _MobileMenu2.default();
-var featureItemReveal = new _RevealOnScroll2.default(".feature-item", "85%");
-var testimonialReveal = new _RevealOnScroll2.default(".testimonial", "60%");
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports) {
 
 /*!
@@ -953,6 +828,355 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
   Waypoint.Adapter = NoFrameworkAdapter
 }())
 ;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var MobileMenu = function () {
+    function MobileMenu() {
+        _classCallCheck(this, MobileMenu);
+
+        this.siteHeader = document.querySelector('.site-header');
+        this.menuIcon = document.querySelector('.site-header__menu-icon');
+        this.menuContent = document.querySelector('.site-header__menu-content');
+        this.events();
+    }
+
+    _createClass(MobileMenu, [{
+        key: 'events',
+        value: function events() {
+            this.menuIcon.addEventListener('click', this.toggleTheMenu.bind(this));
+        }
+    }, {
+        key: 'toggleTheMenu',
+        value: function toggleTheMenu() {
+            this.menuContent.classList.toggle('site-header__menu-content--is-visible');
+            this.siteHeader.classList.toggle('site-header--is-expanded');
+            this.menuIcon.classList.toggle('site-header__menu-icon--close-x');
+        }
+    }]);
+
+    return MobileMenu;
+}();
+
+exports.default = MobileMenu;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _noframework = __webpack_require__(0);
+
+var _noframework2 = _interopRequireDefault(_noframework);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var RevealOnScroll = function () {
+    function RevealOnScroll(els, offset) {
+        _classCallCheck(this, RevealOnScroll);
+
+        this.itemsToReveal = document.querySelectorAll(els);
+        this.offset = offset;
+        this.hideInitially();
+        this.createWaypoints();
+    }
+
+    _createClass(RevealOnScroll, [{
+        key: 'hideInitially',
+        value: function hideInitially() {
+            this.itemsToReveal.forEach(function (el) {
+                el.classList.add('reveal-item');
+            });
+        }
+    }, {
+        key: 'createWaypoints',
+        value: function createWaypoints() {
+            var _this = this;
+
+            this.itemsToReveal.forEach(function (el) {
+                new Waypoint({
+                    element: el,
+                    handler: function handler() {
+                        el.classList.add("reveal-item--is-visible");
+                    },
+                    offset: _this.offset
+                });
+            }, this);
+        }
+    }]);
+
+    return RevealOnScroll;
+}();
+
+exports.default = RevealOnScroll;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _noframework = __webpack_require__(0);
+
+var _noframework2 = _interopRequireDefault(_noframework);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var smoothScroll = __webpack_require__(5);
+
+var StickyHeader = function () {
+    function StickyHeader() {
+        _classCallCheck(this, StickyHeader);
+
+        this.siteHeader = document.querySelector('.site-header');
+        this.headerTrigger = document.querySelector('.large-hero__title');
+        this.createHeaderWaypoint();
+        this.pageSections = document.querySelectorAll('.page-section');
+        this.headerLinks = document.querySelectorAll('.primary-nav a');
+        this.createPageSectionWaypoints();
+    }
+
+    _createClass(StickyHeader, [{
+        key: 'createHeaderWaypoint',
+        value: function createHeaderWaypoint() {
+            var self = this;
+            new Waypoint({
+                element: self.headerTrigger,
+                handler: function handler(direction) {
+                    if (direction === 'down') {
+                        self.siteHeader.classList.add('site-header--dark');
+                    } else {
+                        self.siteHeader.classList.remove('site-header--dark');
+                    }
+                }
+            });
+        }
+    }, {
+        key: 'createPageSectionWaypoints',
+        value: function createPageSectionWaypoints() {
+            var _this = this;
+
+            this.pageSections.forEach(function (el) {
+                new Waypoint({
+                    element: el,
+                    handler: function handler(direction) {
+                        if (direction === 'down') {
+                            var matchingHeaderLink = document.querySelector(el.getAttribute('data-matching-link'));
+                            _this.headerLinks.forEach(function (el) {
+                                el.classList.remove('is-current-link');
+                            });
+                            matchingHeaderLink.classList.add('is-current-link');
+                        }
+                    },
+                    offset: "18%"
+                });
+                new Waypoint({
+                    element: el,
+                    handler: function handler(direction) {
+                        if (direction === 'up') {
+                            var matchingHeaderLink = document.querySelector(el.getAttribute('data-matching-link'));
+                            _this.headerLinks.forEach(function (el) {
+                                el.classList.remove('is-current-link');
+                            });
+                            matchingHeaderLink.classList.add('is-current-link');
+                        }
+                    },
+                    offset: "40%"
+                });
+            }, this);
+        }
+    }]);
+
+    return StickyHeader;
+}();
+
+exports.default = StickyHeader;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _MobileMenu = __webpack_require__(1);
+
+var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
+
+var _RevealOnScroll = __webpack_require__(2);
+
+var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
+
+var _StickyHeader = __webpack_require__(3);
+
+var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mobileMenu = new _MobileMenu2.default();
+var featureItemReveal = new _RevealOnScroll2.default(".feature-item", "85%");
+var testimonialReveal = new _RevealOnScroll2.default(".testimonial", "60%");
+var stickyHeader = new _StickyHeader2.default();
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, smoothScroll) {
+  'use strict';
+
+  // Support RequireJS and CommonJS/NodeJS module formats.
+  // Attach smoothScroll to the `window` when executed as a <script>.
+
+  // RequireJS
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_FACTORY__ = (smoothScroll),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+				__WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+  // CommonJS
+  } else if (typeof exports === 'object' && typeof module === 'object') {
+    module.exports = smoothScroll();
+
+  } else {
+    root.smoothScroll = smoothScroll();
+  }
+
+})(this, function(){
+'use strict';
+
+// Do not initialize smoothScroll when running server side, handle it in client:
+if (typeof window !== 'object') return;
+
+// We do not want this script to be applied in browsers that do not support those
+// That means no smoothscroll on IE9 and below.
+if(document.querySelectorAll === void 0 || window.pageYOffset === void 0 || history.pushState === void 0) { return; }
+
+// Get the top position of an element in the document
+var getTop = function(element, start) {
+    // return value of html.getBoundingClientRect().top ... IE : 0, other browsers : -pageYOffset
+    if(element.nodeName === 'HTML') return -start
+    return element.getBoundingClientRect().top + start
+}
+// ease in out function thanks to:
+// http://blog.greweb.fr/2012/02/bezier-curve-based-easing-functions-from-concept-to-implementation/
+var easeInOutCubic = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 }
+
+// calculate the scroll position we should be in
+// given the start and end point of the scroll
+// the time elapsed from the beginning of the scroll
+// and the total duration of the scroll (default 500ms)
+var position = function(start, end, elapsed, duration) {
+    if (elapsed > duration) return end;
+    return start + (end - start) * easeInOutCubic(elapsed / duration); // <-- you can change the easing funtion there
+    // return start + (end - start) * (elapsed / duration); // <-- this would give a linear scroll
+}
+
+// we use requestAnimationFrame to be called by the browser before every repaint
+// if the first argument is an element then scroll to the top of this element
+// if the first argument is numeric then scroll to this location
+// if the callback exist, it is called when the scrolling is finished
+// if context is set then scroll that element, else scroll window
+var smoothScroll = function(el, duration, callback, context){
+    duration = duration || 500;
+    context = context || window;
+    var start = context.scrollTop || window.pageYOffset;
+
+    if (typeof el === 'number') {
+      var end = parseInt(el);
+    } else {
+      var end = getTop(el, start);
+    }
+
+    var clock = Date.now();
+    var requestAnimationFrame = window.requestAnimationFrame ||
+        window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame ||
+        function(fn){window.setTimeout(fn, 15);};
+
+    var step = function(){
+        var elapsed = Date.now() - clock;
+        if (context !== window) {
+          context.scrollTop = position(start, end, elapsed, duration);
+        }
+        else {
+          window.scroll(0, position(start, end, elapsed, duration));
+        }
+
+        if (elapsed > duration) {
+            if (typeof callback === 'function') {
+                callback(el);
+            }
+        } else {
+            requestAnimationFrame(step);
+        }
+    }
+    step();
+}
+
+var linkHandler = function(ev) {
+    ev.preventDefault();
+
+    if (location.hash !== this.hash) window.history.pushState(null, null, this.hash)
+    // using the history api to solve issue #1 - back doesn't work
+    // most browser don't update :target when the history api is used:
+    // THIS IS A BUG FROM THE BROWSERS.
+    // change the scrolling duration in this call
+    var node = document.getElementById(this.hash.substring(1))
+    if(!node) return; // Do not scroll to non-existing node
+
+    smoothScroll(node, 500, function(el) {
+        location.replace('#' + el.id)
+        // this will cause the :target to be activated.
+    });
+}
+
+// We look for all the internal links in the documents and attach the smoothscroll function
+document.addEventListener("DOMContentLoaded", function () {
+    var internal = document.querySelectorAll('a[href^="#"]:not([href="#"])'), a;
+    for(var i=internal.length; a=internal[--i];){
+        a.addEventListener("click", linkHandler, false);
+    }
+});
+
+// return smoothscroll API
+return smoothScroll;
+
+});
+
 
 /***/ })
 /******/ ]);
