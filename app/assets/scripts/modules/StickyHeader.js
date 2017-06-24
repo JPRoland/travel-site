@@ -1,15 +1,24 @@
 import wayPoints from '../../../../node_modules/waypoints/lib/noframework.waypoints';
-const smoothScroll = require('smoothscroll');
 
 export default class StickyHeader {
     constructor() {
+        this.lazyImages = document.querySelectorAll('.lazyload');
         this.siteHeader = document.querySelector('.site-header');
         this.headerTrigger = document.querySelector('.large-hero__title');
         this.createHeaderWaypoint();
         this.pageSections = document.querySelectorAll('.page-section');
         this.headerLinks = document.querySelectorAll('.primary-nav a');
         this.createPageSectionWaypoints();
+        this.refreshWaypoints();
         
+    }
+
+    refreshWaypoints() {
+        this.lazyImages.forEach((el) => {
+            el.addEventListener('load', () => {
+                Waypoint.refreshAll();
+            });
+        });
     }
 
     createHeaderWaypoint() {
